@@ -7,18 +7,18 @@ write the result of the execution to the Output Panel.
 """
 
 import tkinter as tk
+from datetime import datetime
 
 def askUser():
     global userName, userBirth
     userName = input("What is your name?\n")
-    userBirth = input("When were you born? (MM/DD/YYYY)\n")
+    userBirth = int(input("What year were you born?\n"))
 
 def getFirst3Letters(string:str) -> str:
     return string[:3].title()
 
 def calcUserAge(birth):
-    # TODO
-    pass
+    return datetime.now().year - userBirth
 
 def openWindow():
     root = tk.Tk()
@@ -26,3 +26,5 @@ def openWindow():
 
 if __name__ == "__main__":
     openWindow()
+    # askUser()
+    # print(calcUserAge(userBirth))
